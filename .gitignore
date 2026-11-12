@@ -1,0 +1,21 @@
+# Segredos: nunca no Git
+.env
+.env.*
+*.key
+*.pem
+secrets*
+
+# Relatórios do QA (contêm respostas completas do modelo)
+qa_relatorios/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Sistema
+.DS_Store
+.idea/
+.vscode/

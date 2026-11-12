@@ -1,0 +1,22 @@
+name: testes
+
+on:
+  push:
+  pull_request:
+
+# Mínimo de permissões: o workflow só precisa de ler o código.
+permissions:
+  contents: read
+
+jobs:
+  unitarios:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # Só os testes da ferramenta: não usam a API nem precisam de nenhuma chave.
+      - run: python -m unittest discover testes -v
